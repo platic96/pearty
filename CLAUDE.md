@@ -4,7 +4,7 @@
 
 **pearty**는 개인 투자 전략을 체계적으로 수립하고, 최종적으로 **투자 지원 대시보드**를 구축하기 위한 프로젝트입니다.
 
-현재 단계: 투자 전략 리서치 및 분석 문서 작성 중
+현재 단계: InvestPulse 대시보드 Phase 1 (MVP) 개발 중
 
 ## 저장소 구조
 
@@ -12,26 +12,49 @@
 pearty/
 ├── CLAUDE.md                              ← 프로젝트 가이드 (현재 문서)
 ├── README.md                              ← 프로젝트 소개
-└── docs/
-    ├── investment-strategy-workflow.md     ← 전체 워크플로우 및 프로세스
-    ├── 01-investment-strategies-report.md  ← 투자 전략 비교 분석 보고서
-    ├── 02-famous-investors-report.md       ← 유명 투자자 5인 분석 보고서
-    └── 03-personal-strategy-template.md   ← 개인 투자 전략 수립 템플릿
+├── docs/
+│   ├── investment-strategy-workflow.md     ← 전체 워크플로우 및 프로세스
+│   ├── 01-investment-strategies-report.md  ← 투자 전략 비교 분석 보고서
+│   ├── 02-famous-investors-report.md       ← 유명 투자자 5인 분석 보고서
+│   └── 03-personal-strategy-template.md   ← 개인 투자 전략 수립 템플릿
+└── investpulse/                           ← 투자 지원 대시보드
+    ├── backend/                           ← FastAPI 백엔드
+    │   ├── app/                           ← 애플리케이션 코드
+    │   │   ├── routers/                   ← API 라우터
+    │   │   ├── services/                  ← 비즈니스 로직
+    │   │   ├── models/                    ← SQLAlchemy 모델
+    │   │   └── schemas/                   ← Pydantic 스키마
+    │   └── requirements.txt
+    ├── frontend/                          ← Vue 3 + TypeScript 프론트엔드
+    │   └── src/
+    │       ├── views/                     ← 페이지 컴포넌트
+    │       ├── components/                ← UI 컴포넌트
+    │       ├── composables/               ← Composition API hooks
+    │       ├── stores/                    ← Pinia 상태관리
+    │       └── api/                       ← API 클라이언트
+    ├── docker-compose.yml
+    └── README.md
 ```
 
 ## 프로젝트 로드맵
 
-1. **Phase 1** (현재): 투자 전략 리서치 및 문서화
-   - 주식 투자 전략 중심
-   - 유명 투자자 분석
-   - 개인 전략 수립
-2. **Phase 2** (예정): 자산군 확장
-   - 암호화폐 (Cryptocurrency) 전략 추가
-   - 부동산 (Real Estate) 전략 추가
-3. **Phase 3** (예정): 투자 지원 대시보드 개발
-   - 포트폴리오 시각화
-   - 자산 배분 추천
-   - 벤치마크 비교
+### InvestPulse 대시보드 개발
+1. **Phase 1** (현재): MVP — 암호화폐 모니터링 + 기술지표 + 알림
+   - FastAPI 백엔드 + Upbit API 연동
+   - RSI, MACD, Bollinger Bands 기술지표 계산
+   - Discord 웹훅 알림
+   - Vue 3 대시보드 (캔들차트, 지표 패널, 포트폴리오)
+2. **Phase 2** (예정): 알림 시스템 고도화
+   - 알림 조건 CRUD 확장
+   - 조건 평가 엔진 고도화
+   - 알림 히스토리
+3. **Phase 3** (예정): 주식 통합 + 포트폴리오
+   - 주식 API 연동 (한국투자증권 OpenAPI)
+   - 포트폴리오 리밸런싱 제안
+4. **Phase 4** (예정): 고도화
+   - 다크모드 / 테마 커스터마이징
+   - 모바일 반응형
+   - 뉴스 피드 통합
 
 ## Git 컨벤션
 
