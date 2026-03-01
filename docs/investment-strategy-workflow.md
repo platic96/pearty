@@ -55,5 +55,7 @@ docs/
 ├── investment-strategy-workflow.md    ← 현재 문서 (워크플로우)
 ├── 01-investment-strategies-report.md ← Phase 1 산출물
 ├── 02-famous-investors-report.md      ← Phase 2 산출물
-└── 03-personal-strategy-template.md   ← Phase 3 산출물
+├── 03-personal-strategy-template.md   ← Phase 3 산출물 (작성 예시)
+├── 03-personal-strategy-blank.md      ← Phase 3 빈 템플릿
+└── 04-strategy-creation-guide.md      ← 전략 수립 프로세스 가이드 (Step 1-7)
 ```

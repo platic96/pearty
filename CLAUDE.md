@@ -16,7 +16,9 @@ pearty/
     ├── investment-strategy-workflow.md     ← 전체 워크플로우 및 프로세스
     ├── 01-investment-strategies-report.md  ← 투자 전략 비교 분석 보고서
     ├── 02-famous-investors-report.md       ← 유명 투자자 5인 분석 보고서
-    └── 03-personal-strategy-template.md   ← 개인 투자 전략 수립 템플릿
+    ├── 03-personal-strategy-template.md   ← 개인 투자 전략 (작성 예시)
+    ├── 03-personal-strategy-blank.md      ← 개인 투자 전략 (빈 템플릿)
+    └── 04-strategy-creation-guide.md      ← 전략 수립 프로세스 가이드
 ```
 
 ## 프로젝트 로드맵
@@ -43,5 +45,7 @@ pearty/
 
 - 문서는 한국어로 작성하되, 투자 용어는 한국어(영어) 형태로 병기
 - `docs/` 디렉토리 내 문서 간 상호 참조 유지
+- 새 사용자의 전략 수립 시 `04-strategy-creation-guide.md`의 프로세스를 따른다
+- 빈 템플릿(`03-personal-strategy-blank.md`)을 복사하여 사용자별 전략 문서를 생성한다
 - 대시보드 개발 시 `03-personal-strategy-template.md`의 JSON 데이터 구조를 참조
 - 자산군 확장 시 기존 문서 구조를 유지하며 섹션 추가
