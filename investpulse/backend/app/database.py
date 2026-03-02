@@ -19,6 +19,7 @@ async def get_session():
 async def init_db():
     # Import models so they register with Base.metadata
     import app.models.alert  # noqa: F401
+    import app.models.alert_history  # noqa: F401
     import app.models.market  # noqa: F401
     import app.models.portfolio  # noqa: F401
 

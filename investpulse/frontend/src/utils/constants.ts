@@ -17,7 +17,7 @@ export const CHART_COLORS = {
 
 export const DEFAULT_MARKETS = ['BTC', 'ETH', 'XRP', 'SOL', 'DOGE']
 
-export const INDICATOR_CONDITIONS = {
+export const INDICATOR_CONDITIONS: Record<string, Array<{ value: string; label: string }>> = {
   RSI: [
     { value: 'above', label: '이상 (Above)' },
     { value: 'below', label: '이하 (Below)' },
@@ -33,5 +33,8 @@ export const INDICATOR_CONDITIONS = {
   PRICE: [
     { value: 'above', label: '이상 (Above)' },
     { value: 'below', label: '이하 (Below)' },
+  ],
+  CHANGE_RATE: [
+    { value: 'above', label: '변동률 초과 (Change Rate Above %)' },
   ],
 }
