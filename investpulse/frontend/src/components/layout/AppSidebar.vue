@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useUiStore } from '@/stores/ui'
 import { storeToRefs } from 'pinia'
-import { LayoutDashboard, Bell, Wallet, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { LayoutDashboard, Bell, Wallet, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-vue-next'
 import { DEFAULT_MARKETS } from '@/utils/constants'
 
 const uiStore = useUiStore()
@@ -45,6 +45,14 @@ const { selectedMarket, selectedTimeframe, sidebarOpen, timeframes } = storeToRe
       >
         <Bell :size="20" />
         <span v-if="sidebarOpen">Alerts</span>
+      </router-link>
+      <router-link
+        to="/stocks"
+        class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+        active-class="!bg-indigo-500/20 text-indigo-400"
+      >
+        <TrendingUp :size="20" />
+        <span v-if="sidebarOpen">Stocks</span>
       </router-link>
       <router-link
         to="/portfolio"

@@ -6,9 +6,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database import init_db
-from app.routers import alerts, indicators, market, portfolio
+from app.routers import alerts, indicators, market, portfolio, rebalance, stocks
 from app.routers import websocket as ws_router
 from app.routers.market import _upbit_service
+from app.routers.stocks import _kis_service
 from app.routers.websocket import upbit_ws_relay
 from app.services.alert_engine import AlertEngine
 
@@ -30,6 +31,7 @@ async def lifespan(app: FastAPI):
     relay_task.cancel()
     alert_engine.shutdown()
     await _upbit_service.close()
+    await _kis_service.close()
 
 
 app = FastAPI(title="InvestPulse API", version="0.1.0", lifespan=lifespan)
@@ -46,6 +48,8 @@ app.include_router(market.router)
 app.include_router(indicators.router)
 app.include_router(alerts.router)
 app.include_router(portfolio.router)
+app.include_router(stocks.router)
+app.include_router(rebalance.router)
 app.include_router(ws_router.router)
 
 

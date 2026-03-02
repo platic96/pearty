@@ -1,6 +1,6 @@
 # InvestPulse — 투자 지원 대시보드
 
-암호화폐를 실시간 모니터링하고, 기술적 분석 지표(RSI, MACD, Bollinger Bands) 기반 조건 알림을 디스코드로 전송하는 투자 지원 웹 애플리케이션.
+암호화폐와 국내 주식을 통합 모니터링하고, 기술적 분석 지표(RSI, MACD, Bollinger Bands) 기반 조건 알림을 디스코드로 전송하며, 포트폴리오 리밸런싱을 제안하는 투자 지원 웹 애플리케이션.
 
 ## 기술 스택 (Tech Stack)
 
@@ -22,6 +22,7 @@
 
 ### 데이터 소스
 - **Upbit API** — 암호화폐 시세 (KRW 마켓)
+- **한국투자증권 OpenAPI** — 국내 주식 시세 (선택 설정)
 
 ## 빠른 시작 (Quick Start)
 
@@ -67,9 +68,21 @@ docker-compose up --build
 | POST | `/api/alerts` | 알림 생성 |
 | PUT | `/api/alerts/{id}` | 알림 수정 |
 | DELETE | `/api/alerts/{id}` | 알림 삭제 |
-| GET | `/api/portfolio` | 포트폴리오 요약 |
+| GET | `/api/stocks/status` | KIS API 연결 상태 |
+| GET | `/api/stocks/search?q=` | 주식 종목 검색 |
+| GET | `/api/stocks/price/{code}` | 주식 현재가 |
+| GET | `/api/stocks/candles/{code}` | 주식 캔들 (일/주/월봉) |
+| GET | `/api/stocks/indicators/{code}` | 주식 기술지표 |
+| GET | `/api/portfolio` | 포트폴리오 요약 (자산군별 그룹) |
 | POST | `/api/portfolio/assets` | 자산 추가 |
+| PUT | `/api/portfolio/assets/{id}` | 자산 수정 |
 | DELETE | `/api/portfolio/assets/{id}` | 자산 삭제 |
+| GET | `/api/rebalance/targets` | 목표 자산배분 조회 |
+| POST | `/api/rebalance/targets` | 목표 배분 추가 |
+| PUT | `/api/rebalance/targets/{id}` | 목표 배분 수정 |
+| DELETE | `/api/rebalance/targets/{id}` | 목표 배분 삭제 |
+| POST | `/api/rebalance/targets/init-defaults` | 기본 목표 배분 초기화 |
+| GET | `/api/rebalance/suggest` | 리밸런싱 제안 |
 | WS | `/ws/market` | 실시간 가격 스트림 |
 
 ## 프로젝트 구조

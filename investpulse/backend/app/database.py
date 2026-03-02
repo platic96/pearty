@@ -21,7 +21,7 @@ async def init_db():
     import app.models.alert  # noqa: F401
     import app.models.alert_history  # noqa: F401
     import app.models.market  # noqa: F401
-    import app.models.portfolio  # noqa: F401
+    import app.models.portfolio  # noqa: F401 (PortfolioAsset, TargetAllocation)
 
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
