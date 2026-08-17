@@ -1,3 +1,8 @@
 # 개인 자산 데이터 (커밋 금지)
 docs/my-portfolio.txt
 docs/my-portfolio*.txt
+
+# 분석 산출물 (개인 자산 데이터 포함 — 커밋 금지)
+자산포트폴리오_분석_*.xlsx
+docs/05-portfolio-analysis-report.md
+docs/portfolio-analysis-dashboard.html
